@@ -1,0 +1,212 @@
+body {
+  font-family: sans-serif;
+  background-image: url(https://img.freepik.com/vetores-gratis/fundo-gradiente-de-galaxia_23-2148983655.jpg?w=740&t=st=1716511091~exp=1716511691~hmac=d68646a5843fd371862b05af0e8b73587011d47aba615d07e7533d627a4098d7);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+* {
+  padding: 2px 0px 0px 0px;
+  margin: 0;
+  color: white;
+  font-family: Ubuntu;
+  font-size: large;
+  text-align: center;
+}
+
+header {
+  background-color: #475569;
+  padding: 15px;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+footer {
+  background-color: #475569;
+  padding-block: 12px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  font-family: Ubuntu;
+}
+
+.Info01{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.Info02{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 2vw 0vw 0vw 1vw;
+}
+
+.imageSec {
+  width: 260px;
+  height: 171px;
+  border-radius: 6px;  
+  background-color: #94a3b8;
+  cursor: pointer;
+  transition: 0.4 ease;
+}
+
+.imageSec:hover{
+  transform: scale(1.03);
+}
+
+main {
+  padding-block: 90px;
+  margin-inline: auto;
+}
+
+.ativo, .desativo {
+  font: Ubuntu;
+  width: 75px;
+  height: 17.25px;
+  font-size: small;
+  top: 96px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+}
+
+.ativo {
+  background-color: #4ADE80;
+  transition: transform 0.3s ease;
+}
+
+.desativo {
+  background-color:#F87171;  ;
+  transition: transform 0.3s ease;
+}
+
+.ativo:hover,.desativo:hover{
+  transform: scale(1.1);
+}
+
+.linkSec {
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.search-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #334155;
+  border-radius: 6px;
+  padding: 5px 8px;
+}
+
+.search-input {
+  padding: 5px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  width: 500px; 
+  transition: width 0.3s ease; 
+}
+
+.search-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  padding-right: 12px;
+}
+
+::-webkit-input-placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 5px;
+  background-color: #1f2937;
+  border-radius: 10px;
+  width: auto;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-link, .page-arrow {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin: 0 2px;
+  border-radius: 5px;
+  background-color: #6b7280;
+}
+
+.page-link:hover, .page-arrow:hover {
+  background-color: #374151;
+}
+
+.pagination a.disabled {
+  opacity: 0.5;
+}
+
+.pagination a.active {
+  font-weight: bold;
+}
+
+.page-arrow {
+  transition: transform 0.3s ease;
+}
+
+.page-arrow:hover {
+  transform: scale(1.2); 
+}

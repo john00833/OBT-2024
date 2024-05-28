@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthofila</title>
+    <link rel="stylesheet" href="styles02.css">
+    <link rel="stylesheet" href="styles01.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .steps {
+            margin-top: 0px;
+        }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .steps-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            border: 2px solid #fff;
+            appearance: none;
+            cursor: pointer;
+        }
+
+        .checkbox:checked {
+            background-color: #fff;
+        }
+
+        .add-step {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #007bff;
+        }
+
+        .add-step i {
+            margin-right: 5px;
+            font-size: 20px;
+        }
+
+        .new-step-input {
+            margin-top: 10px;
+            display: flex;
+        }
+
+        .new-step-input input {
+            padding: 5px;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .new-step-input button {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="profile-container">
+           <a href="tela.html" style="cursor: pointer;"><img src="Exemplar(logo).png" alt="Profile Picture" class="profile-pic"></a>
+        </div>
+        <div class="search-container">
+            <form class="search-form">
+                <input type="text" placeholder="Pesquisa" class="search-input" style="opacity: 20%;">
+                <button type="submit" class="search-button">
+                    <img src="lupa.png" alt="Search" class="search-icon">
+                </button>
+            </form>
+        </div>
+    </header>
+    <main>
+        <div id="todo" style="position: relative; left: 100px;">
+            <div class="ConteinerIcon">
+                <div class="ContainerText">
+                    <p class="Title">Materiais resistentes à radiação espacial</p><br>
+                    <p><div class="desativo">avariado</div></p><br>
+                    <img src="Bandeira-BR.png" alt="Bandeira-BR" class="IconBR"> <br>
+                    <hr style="padding: 0;border: 1px solid #a1a1aa"><br>
+                    <p style="text-align: left;" id="Descricao">Descrição</p><br>
+                    <p style="text-align: left;" id="InformD">Este experimento tem como objetivo analisar os efeitos da microgravidade na densidade óssea e muscular dos astronautas que ficam por longos períodos a bordo da ISS. A pesquisa busca entender como a falta de gravidade afeta o corpo humano e quais são as consequências a longo prazo.</p><br>
+                    <hr style="padding: 0;border: 1px solid #a1a1aa"><br>
+                    <div class="steps">
+                        <h2>Passo a passo para o reparo</h2>
+                        <ul class="steps-list">
+                            <li>
+                                <input type="checkbox" class="checkbox">
+                                <span>Avaliar o dano ao experimento e determinar o que foi afetado;</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="checkbox">
+                                <span>Identificar as peças que precisam ser reparadas ou substituídas;</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="checkbox">
+                                <span>Remover as peças danificadas com cuidado para não prejudicar ainda mais o experimento;</span>
+                            </li>
+                        </ul>
+                        <div class="add-step" id="add-step">
+                            <i class="fas fa-plus"></i>
+                            <span>Adicionar novo passo</span>
+                        </div>
+                        <div class="new-step-input" id="new-step-input" style="display: none;">
+                            <input type="text" id="new-step-text" placeholder="Digite o novo passo...">
+                            <button id="add-new-step-button">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>Background for <a href="https://br.freepik.com" style="color: white;">Freepik</a></footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addStepButton = document.getElementById('add-step');
+            const newStepInputDiv = document.getElementById('new-step-input');
+            const addNewStepButton = document.getElementById('add-new-step-button');
+            const stepsList = document.querySelector('.steps-list');
+
+            addStepButton.addEventListener('click', function() {
+                newStepInputDiv.style.display = 'flex';
+            });
+
+            addNewStepButton.addEventListener('click', function() {
+                const newStepText = document.getElementById('new-step-text').value;
+                if (newStepText.trim() !== '') {
+                    const newStepItem = document.createElement('li');
+                    newStepItem.innerHTML = `
+                        <input type="checkbox" class="checkbox">
+                        <span>${newStepText}</span>
+                    `;
+                    stepsList.appendChild(newStepItem);
+                    document.getElementById('new-step-text').value = '';
+                    newStepInputDiv.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
